@@ -1,0 +1,17 @@
+numpy>=1.23.1
+pyserial>=3.5
+scikit_learn>=1.1.2
+svtk>=0.1.0
+vtk>=9.1.0
+
+[dev]
+black==18.*,>=18.3.0.a0
+coverage==4.*,>=4.5.0
+mypy==0.*,>=0.740.0
+pydocstyle==4.*,>=4.0.0
+pytest==5.2.1
+sphinx==2.*,>=2.2.0
+tox==3.*,>=3.14.0
+tox-gh-actions==0.*,>=0.3.0
+typing==3.7.4.1
+wheel==0.*,>=0.30.0

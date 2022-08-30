@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: calimu
+Version: 0.1.0
+Summary: A tool for calibrating IMUs
+Home-page: UNKNOWN
+Author: SimLeek
+Author-email: simulator.leek@gmail.com
+License: MIT
+Project-URL: repository, https://github.com/simleek/displayarray
+Description: calimu
+        ======
+        
+        A library for calibrating IMUs.
+        
+        Usage
+        -----
+        
+        In a console, type:
+        
+        ::
+        
+            calimu
+        
+        A somewhat complicated window should pop up with a light blue panel to the left of it:
+        
+        .. figure:: https://i.imgur.com/nMdLK6M.png
+        
+        From there, make sure the IMU is plugged in through a USB serial port, refresh the port list if needed, then click "Connect IMU"
+        
+        Then, under IMU Options, click Gather, and start rotating the IMU to gather data. Currently, magnetometer data is yellow and accelerometer data is red.
+        
+        Once you've gathered enough data, click Stop, select Magnetometer or Accelerometer under Ellipsoid Fit Options (and optionally more specific fit methods), and then got to Ellipsoid Fit and click Add.
+        
+        You should see a wireframe sphere (ellipsoid) with the collected data points very close to the surface. If it's a good fit, you can go ahead and click Apply Selected Ellipsoid Offsets.
+        
+        You can now gather data again to check if your IMU outputs more spherical data. If it does, it is now successfully calibrate.
+        
+        Here's a picture of a new fit compared to an old one after applying the offsets :
+        
+        .. figure:: https://i.imgur.com/S6mSsgx.png
+           :alt:
+        
+        
+        Installation
+        ------------
+        
+        ::
+        
+            pip install calimu
+        
+        To Do
+        -----
+        
+        * add an orientation indicator that also shows magnitude
+        * add ability to show/hide fits instead of deleting only
+        * add baud rate and text entry for GUI, as well as other serial connection options
+        
+          * add non-serial connections for things like full body trackers
+        
+        * add a 3D rtree or voxel octree to query point distance while adding points, and then set a min distance
+        
+          * toggle displaying this rtree or voxel octree
+          * add option to set how many levels deep to display
+        
+        * add scale calibration, taking into account the intended gravity or magnetism range and available bits
+        * allow importing point clouds and fitting those.
+        * add ability to compensate for previous offsets when setting. The current method expects the offsets to be all zero.
+        * add a device list to the gui, and the ability to replace that list with new devices with short python scripts
+        
+        License
+        -------
+        
+        calimu is distributed under the terms of the
+        
+        -  `MIT License <https://choosealicense.com/licenses/mit>`__
+        
+Platform: UNKNOWN
+Requires-Python: ==3.*,>=3.7.0
+Provides-Extra: dev
